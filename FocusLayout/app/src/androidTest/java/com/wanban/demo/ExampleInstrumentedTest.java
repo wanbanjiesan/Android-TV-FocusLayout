@@ -1,4 +1,4 @@
-package com.wanban.focuslayout;
+package com.wanban.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

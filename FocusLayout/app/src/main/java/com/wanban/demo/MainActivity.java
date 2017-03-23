@@ -1,8 +1,10 @@
-package com.wanban.focuslayout;
+package com.wanban.demo;
 
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.wanban.focuslayout.HLayoutContainer;
 
 import java.util.ArrayList;
 

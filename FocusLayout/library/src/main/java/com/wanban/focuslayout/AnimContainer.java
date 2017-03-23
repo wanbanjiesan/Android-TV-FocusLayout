@@ -86,16 +86,24 @@ public class AnimContainer extends RelativeLayout {
         }
     }
 
-    public void animateSmall() {
+    private void animateSmall() {
         this.animate().scaleX(VALUE_ANIMATE_SMALL).scaleY(VALUE_ANIMATE_SMALL).start();
     }
 
-    public void animateBig() {
+    private void animateBig() {
         this.animate().scaleX(VALUE_ANIMATE_BIG).scaleY(VALUE_ANIMATE_BIG).start();
     }
 
 
     private int dpToPx(Resources res, int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, res.getDisplayMetrics());
+    }
+
+    /**
+     * 设置焦点框的图片
+     * @param resId
+     */
+    public void setFocusImgResId(int resId){
+        mDrawable = getResources().getDrawable(resId);// nav_focused_2,poster_shadow
     }
 }
