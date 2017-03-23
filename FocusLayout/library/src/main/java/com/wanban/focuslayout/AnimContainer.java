@@ -41,6 +41,9 @@ public class AnimContainer extends RelativeLayout {
     }
 
     protected void init() {
+        setFocusable(true);
+        setClickable(true);
+        setFocusableInTouchMode(true);
         // init focus image bound size
         padding = dpToPx(getResources(), 49);
         // because you will user onDraw(), if not, the method of onDraw is no effect

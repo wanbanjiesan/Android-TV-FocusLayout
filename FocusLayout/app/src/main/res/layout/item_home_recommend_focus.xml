@@ -2,11 +2,7 @@
 <com.wanban.focuslayout.AnimContainer xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
-
-
+    >
     <ImageView
         android:id="@+id/iv_home_item"
         android:layout_width="match_parent"
@@ -14,13 +10,10 @@
         android:layout_centerInParent="true"
         android:duplicateParentState="true"
         android:scaleType="fitXY" />
-
-
     <ImageView
         android:id="@+id/iv_shadow_inner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_home_shadow_inner" />
-
 
 </com.wanban.focuslayout.AnimContainer>

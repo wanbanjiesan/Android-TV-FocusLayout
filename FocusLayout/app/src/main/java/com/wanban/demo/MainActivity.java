@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hLayoutContainer = (HLayoutContainer) findViewById(R.id.view_hlayout);
-
         // demo 布局是前8个item是不规则大小，后面的就是规则的大小
         int childCount = 20;
+        // HLayoutContainer通过adapter来加载item的view
         MyListAdapter focusAdapter = new MyListAdapter(this, childCount);
         layoutChild(childCount);
         hLayoutContainer.setAdapter(focusAdapter, childLocationInfo);
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // 设置child的布局 本例只是demo，安各位的需求类似的设置即可
     // 设置child的布局 本例只是demo，安各位的需求类似的设置即可
     private void layoutChild(int count) {
         childLocationInfo = new ArrayList<>();
