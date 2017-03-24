@@ -6,7 +6,7 @@
         }
       }
       dependencies {
-        compile 'com.github.wanbanjiesan:tv_focus_layout_view:v1.1.0323'
+        compile 'com.github.wanbanjiesan:tv_focus_layout_view:v1.2.0324'
       }
 
 
