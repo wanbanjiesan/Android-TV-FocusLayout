@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         hLayoutContainer = (HLayoutContainer) findViewById(R.id.view_hlayout);
         // demo 布局是前8个item是不规则大小，后面的就是规则的大小
-        int childCount = 20;
+        int childCount = 15;
         // HLayoutContainer通过adapter来加载item的view
         MyListAdapter focusAdapter = new MyListAdapter(this, childCount);
-        layoutChild(childCount);
+        layoutChild1(childCount);
         hLayoutContainer.setAdapter(focusAdapter, childLocationInfo);
         hLayoutContainer.post(new Runnable() {
             @Override
@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
         int paddingLeft = 0;
         int paddingTop = 0;
         // 第一张大图的宽
-        int img0W =  801;
+        int img0W = 801;
         // 第一行img的高度
-        int imgTopH =  450;
+        int imgTopH = 450;
         // 第一张大图的高度
-        int img1W =  270;
+        int img1W = 270;
         // 第二行img的高度
-        int imgBottomH =  276;
-        int img2W =  492;
-        int img3W =  315;
+        int imgBottomH = 276;
+        int img2W = 492;
+        int img3W = 315;
         // 第一行img的top
         int top0 = paddingTop;
         // 第二行img的top
@@ -121,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
         if (childRecycleCount > 0) {
             // 固定大小的child
             int recycleLeft = childLocationInfo.get(childLocationInfo.size() - 1).right + itemRowAndColumnSpace;
-            int recycleWidth =  255;
-            int recycleHeight =  363;
+            int recycleWidth = 255;
+            int recycleHeight = 363;
             for (int i = 0; i < childRecycleCount; i++) {
                 Rect child = new Rect();
                 child.left = recycleLeft;
@@ -132,6 +132,32 @@ public class MainActivity extends AppCompatActivity {
                 recycleLeft += (i % 2 == 0 ? 0 : 1) * (recycleWidth + itemRowAndColumnSpace);
                 childLocationInfo.add(child);
             }
+        }
+    }
+
+
+    private void layoutChild1(int count) {
+        childLocationInfo = new ArrayList<>();
+        // 固定大小的child
+        int itemRowAndColumnSpace = 36;
+        int recycleLeft = 0;
+        int recycleTop = 0;
+        int recycleWidth = 255;
+        int recycleHeight = 363;
+        for (int i = 0; i < count; i++) {
+            Rect child = new Rect();
+            if(i != 0 && i % 6 == 0){
+                recycleTop += recycleHeight;
+                recycleLeft = 0;
+            }
+            child.left = recycleLeft + itemRowAndColumnSpace;
+            child.right = child.left + recycleWidth;
+            recycleLeft = child.right;
+
+            child.top = recycleTop + itemRowAndColumnSpace;
+            child.bottom = child.top + recycleHeight;
+
+            childLocationInfo.add(child);
         }
     }
 }
